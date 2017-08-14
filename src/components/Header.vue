@@ -40,6 +40,19 @@
 	@import '../style/mixin';
 
 	.mint-header {
-
+		background: transparent;
+		@include font(0.45rem, 1rem);
+		height: 1rem;
+		color: $cc;
+		.twig {
+			position: relative;
+			display: inline-block;
+			@include wh(0.08rem, 0.5rem);
+			top: 0.1rem;
+			background: $sc;
+		}
+		.title {
+			color: $tc;
+		}
 	}
 </style>
