@@ -1,12 +1,14 @@
 <template>
 	<div>
 		<swipe />
+		<header-title title="在线商城"/>
 	</div>
 </template>
 
 <script>
 
 	import Swipe from '@/components/Swipe'
+	import Header from '@/components/Header'
 
 	export default {
 
@@ -17,7 +19,8 @@
 		},
 
 		components: {
-			'swipe': Swipe
+			'swipe': Swipe,
+			'header-title': Header
 		},
 
 		created () {
@@ -27,7 +30,11 @@
 </script>
 
 <style lang="scss" scoped>
+
+	@import '../style/mixin';
+
 	.test {
-		color: red;
+		color: $sc;
 	}
+
 </style>

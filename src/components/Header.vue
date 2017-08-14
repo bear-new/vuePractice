@@ -1,0 +1,45 @@
+<template>
+	<mt-header>
+	    <mt-button slot="left">
+	    	<span class="twig"></span>
+			<span class="title">{{ title }}</span>
+	    </mt-button>
+	  	<mt-button slot="right">
+	  		<svg class="icon" aria-hidden="true">
+			  	<use xlink:href="#icon-iconfontxiangxia1copy19"></use>
+			</svg>
+	  	</mt-button>
+	</mt-header>
+</template>
+
+<script>
+
+	import { Header, Button } from 'mint-ui' 
+
+	export default {
+		
+		data () {
+			return {
+
+			}
+		},
+
+		components: {
+			'mt-header': Header,
+			'mt-button': Button
+		},
+
+		props: ['title']
+
+	}
+
+</script>
+
+<style lang="scss" scoped>
+
+	@import '../style/mixin';
+
+	.mint-header {
+
+	}
+</style>
