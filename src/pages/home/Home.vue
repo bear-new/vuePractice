@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<swipe />
+		<!-- <swipe /> -->
 		<!-- 健身房介绍 -->
 		<div class="introduction">
 			<mt-header :title="shopName">
@@ -16,7 +16,6 @@
 		</div>
 		<!-- 在线商城 -->
 		<header-title title="在线商城"/>
-		<tabtab />
 	</div>
 </template>
 

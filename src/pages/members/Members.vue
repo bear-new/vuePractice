@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<swipe />
+		会员中心还未进入啊
 	</div>
 </template>
 
@@ -27,7 +28,6 @@
 </script>
 
 <style lang="scss" scoped>
-	.test {
-		color: red;
-	}
+
+
 </style>

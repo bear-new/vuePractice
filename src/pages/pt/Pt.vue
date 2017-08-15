@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<swipe />
+		私教模块已进入
 	</div>
 </template>
 
@@ -27,7 +28,5 @@
 </script>
 
 <style lang="scss" scoped>
-	.test {
-		color: red;
-	}
+
 </style>

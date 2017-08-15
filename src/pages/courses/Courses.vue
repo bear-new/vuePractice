@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<swipe />
+		课程模块快进入啊
 	</div>
 </template>
 
@@ -27,7 +28,6 @@
 </script>
 
 <style lang="scss" scoped>
-	.test {
-		color: red;
-	}
+
+
 </style>

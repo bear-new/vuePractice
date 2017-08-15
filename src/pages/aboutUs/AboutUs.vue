@@ -1,6 +1,7 @@
  <template>
 	<div>
 		<swipe />
+		关于我们模块未进入啊
 	</div>
 </template>
 
@@ -28,7 +29,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.test {
-		color: red;
-	}
+
+
+
 </style>

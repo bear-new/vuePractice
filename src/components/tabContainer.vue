@@ -1,43 +1,50 @@
 <template>
-  <div>
-    <!-- 展示页面 -->
-    <mt-tab-container class="page-tabbar-container" v-model="selected">
-      <mt-tab-container-item id="首页">
-        <home />
-      </mt-tab-container-item>
-      <mt-tab-container-item id="课程">
-       <coursers  />
-      </mt-tab-container-item>
-      <mt-tab-container-item id="私教">
-        <pt />
-      </mt-tab-container-item>
-      <mt-tab-container-item id="会员中心">
-        <members />
-      </mt-tab-container-item>
-      <mt-tab-container-item id="联系我们">
-        <about-us />
-      </mt-tab-container-item>
-    </mt-tab-container>
-    <!-- tab标签 -->
-    <mt-tabbar fixed v-model="selected" class="tab-bar">
-      <template v-for="tab in tabs" >
-        <mt-tab-item :id="tab.name" >
-          <svg class="icon" aria-hidden="true">
-            <use :xlink:href="tab.svg"></use>
-          </svg>
-          <p>{{ tab.name }}</p>
-        </mt-tab-item>
-      </template>
-    </mt-tabbar>
-  </div>
+    <div>
+      <!-- 展示页面 -->
+      <mt-tab-container class="page-tabbar-container" v-model="selected">
+          <mt-tab-container-item id="首页">
+            <home />
+          </mt-tab-container-item>
+
+          <mt-tab-container-item id="课程">
+           <courses />
+          </mt-tab-container-item>
+
+          <mt-tab-container-item id="私教">
+            <pt />
+          </mt-tab-container-item>
+
+          <mt-tab-container-item id="会员中心">
+            <members />
+          </mt-tab-container-item>
+
+          <mt-tab-container-item id="联系我们">
+            <about-us />
+          </mt-tab-container-item>
+
+      </mt-tab-container>
+
+        <!-- tab标签 -->
+        <mt-tabbar fixed v-model="selected" class="tab-bar">
+          <template v-for="tab in tabs" >
+            <mt-tab-item :id="tab.name" >
+              <svg class="icon" aria-hidden="true">
+                <use :xlink:href="tab.svg"></use>
+              </svg>
+              <p>{{ tab.name }}</p>
+            </mt-tab-item>
+          </template>
+        </mt-tabbar>
+    </div>
 </template>
 
 <script type="text/javascript">
 
   import '../assets/js/iconfont.js';
   import { Tabbar, TabItem, TabContainer, TabContainerItem } from 'mint-ui';
+  
   import Home from '../pages/home/Home.vue';
-  import Coursers from '../pages/coursers/Coursers.vue';
+  import Courses from '../pages/courses/Courses.vue';
   import Pt from '../pages/pt/Pt.vue';
   import Members from '../pages/members/Members.vue';
   import AboutUs from '../pages/aboutUs/AboutUs.vue';
@@ -53,7 +60,7 @@
         },
         {
           name: '课程',
-          svg: '#icon-coursers',
+          svg: '#icon-courses',
           selected: false
         },
         {
@@ -86,13 +93,13 @@
       'mt-tab-container': TabContainer,
       'mt-tab-container-item': TabContainerItem,
       'home': Home,
-      'coursers': Coursers,
+      'courses': Courses,
       'pt': Pt,
       'members': Members,
       'about-us': AboutUs
     },
     
-    methods () {
+    methods: {
       
     }
     
