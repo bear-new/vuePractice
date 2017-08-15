@@ -1,3 +1,4 @@
+<!-- 轮播效果 -->
 <template>
 	<mt-swipe :auto="4000">
       	<mt-swipe-item v-for="img in images">
