@@ -1,5 +1,5 @@
 <template>
-	<mt-swipe :auto="4000">
+	<mt-swipe :auto="0">
       	<mt-swipe-item v-for="img in images">
 	  		<img :src="img" />
 	  	</mt-swipe-item>
@@ -12,24 +12,13 @@
 	
 	export default {
 		
-		data () {
-			return {
-				images: []
-			}
-		},
+		props: ['images'],
 
 		components: {
 			'mt-swipe': Swipe,
 			'mt-swipe-item': SwipeItem
 		},
 
-		created () {
-			this.images = [
-				require('@/assets/img/fitness1.jpg'),
-				require('@/assets/img/fitness2.jpg'),
-				require('@/assets/img/fitness3.jpg'),
-			]
-		}
 	}
 
 </script>
@@ -37,11 +26,11 @@
 <style lang="scss">
 	/* 轮播 */
     .mint-swipe {
-        height: 5rem;
+        height: 6rem;
         .mint-swipe-item {
         	img {
 		    	width: 100%;
-		    	height: 5rem;
+		    	height: 6rem;
 		    }
         }
         .mint-swipe-indicators {
