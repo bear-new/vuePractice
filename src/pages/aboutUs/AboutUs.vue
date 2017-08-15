@@ -1,4 +1,4 @@
-<template>
+ <template>
 	<div>
 		<swipe />
 	</div>
@@ -7,6 +7,7 @@
 <script>
 
 	import Swipe from '@/components/Swipe'
+	// import '@/assets/js/iconfont.js'
 
 	export default {
 
