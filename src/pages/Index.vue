@@ -4,6 +4,7 @@
 
 <script>
 
+
 	// import { Header, Button } from 'mint-ui'
 	// import Swipe from '@/components/Swipe'
 	// import HeaderTitle from '@/components/Header'
@@ -16,7 +17,7 @@
 		data () {
 			return {
 				selected:'首页',
-			}
+						}
 		},
 
 		components: {
@@ -29,8 +30,14 @@
 			document.title = '健身助手';
 		},
 	}
+
 </script>
 
 <style lang="scss" scoped>
 
+	@import '../style/mixin';
+
+	.home {
+		background: $black_bgc;
+	}
 </style>

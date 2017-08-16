@@ -12,6 +12,9 @@ $sc: #F4B04F;
 $tc: #FFF;
 // content color 文字内容颜色	
 $cc: #98979C;
+// operation color 操作文字的颜色
+$optc: #FFF;
+// $optc: #58CFFB;
 
 // 背景图片地址和大小
 @mixin bis($url) { 
