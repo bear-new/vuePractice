@@ -108,9 +108,25 @@
 </script>
 
 <style lang="scss" scoped>
-  .icon{
-    font-size:2rem;
-    color:red;
+    @import '../style/mixin';
+  .tab-bar {
+    @include font(0.35rem, 1.5rem);
+    .mint-tab-item {
+      svg {
+        color: red;
+        font-size: 0.6rem;
+        margin-bottom: 0.2rem;
+      }
+      .selected {
+        color: $gray_bgc;
+      }
+    }
+    .is-selected {
+      background: $black_bgc;
+      color: $sc;
+      text-decoration: none;
+    }
   }
 </style>
 
+  
