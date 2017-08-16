@@ -108,6 +108,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+  .icon{
+    font-size:2rem;
+    color:red;
+  }
 </style>
 

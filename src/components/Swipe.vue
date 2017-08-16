@@ -1,6 +1,6 @@
 <!-- 轮播效果 -->
 <template>
-	<mt-swipe :auto="0">
+	<mt-swipe :auto="3000">
       	<mt-swipe-item v-for="img in images">
 	  		<img :src="img" />
 	  	</mt-swipe-item>
@@ -13,7 +13,17 @@
 	
 	export default {
 		
-		props: ['images'],
+		// props: ['images'],
+		data () {
+			return {
+				selected:'首页',
+				images: [
+					require('@/assets/img/fitness1.jpg'),
+					require('@/assets/img/fitness2.jpg'),
+					require('@/assets/img/fitness3.jpg'),
+				],
+			}
+		},
 
 		components: {
 			'mt-swipe': Swipe,
@@ -24,7 +34,7 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	/* 轮播 */
     .mint-swipe {
         height: 6rem;
