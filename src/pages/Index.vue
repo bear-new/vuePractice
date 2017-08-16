@@ -6,7 +6,7 @@
 
 
 	// import { Header, Button } from 'mint-ui'
-	// import Swipe from '@/components/Swipe'
+	import Swipe from '@/components/Swipe'
 	// import HeaderTitle from '@/components/Header'
 	import TabContainer from '../components/TabContainer'
 	// import axios from 'axios'
