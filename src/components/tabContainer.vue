@@ -70,7 +70,7 @@
         },
         {
           name: '会员中心',
-          svg: '#icon-menmbers',
+          svg: '#icon-members',
           selected: false
         },
         {
@@ -110,21 +110,31 @@
 <style lang="scss" scoped>
     @import '../style/mixin';
   .tab-bar {
-    @include font(0.35rem, 1.5rem);
+    @include font(.35rem,1.5rem);
+    background: $gray_bgc;
+    color:#ddd;
+    // height:1.4rem;
     .mint-tab-item {
+       // .mint-tab-item-label{
+       //  font-size:.24rem;
+       // }
+       font-size:.24rem;
       svg {
-        color: red;
-        font-size: 0.6rem;
-        margin-bottom: 0.2rem;
+        color: #ddd;
+        font-size: 0.5rem;
+        margin-bottom: .15rem;
       }
-      .selected {
-        color: $gray_bgc;
-      }
+      // .selected {
+      //   color: $sc;  
+      // }
     }
     .is-selected {
-      background: $black_bgc;
       color: $sc;
+      background:none;
       text-decoration: none;
+      svg {
+          color:$sc;
+        }
     }
   }
 </style>
