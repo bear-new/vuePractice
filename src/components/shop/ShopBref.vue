@@ -33,7 +33,7 @@
 
 <style lang="scss" scoped>
 
-	@import '../../style/mixin'; 
+	@import 'src/style/mixin'; 
 
 	/* 顶部店面介绍 */
 	.introduction {

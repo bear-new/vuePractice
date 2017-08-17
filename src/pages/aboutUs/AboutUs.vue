@@ -48,7 +48,7 @@
 
 <style lang="scss" scoped>
 
-	@import '../../style/mixin';
+	@import 'src/style/mixin';
 
 	.home {
 		background: $black_bgc;

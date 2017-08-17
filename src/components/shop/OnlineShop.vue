@@ -1,11 +1,13 @@
 <template>
 	<div class="online-shop">
 		<header-title title="在线商城" />
-		<ul class="clearfix" ref="stores">
-			<li v-for="item in infos" :style="item.style">
-				<span>{{ item.name }}</span>
-			</li>
-		</ul>
+		<div class="store-box">
+			<ul class="clearfix" ref="stores">
+				<li v-for="item in infos" :style="item.style">
+					<span>{{ item.name }}</span>
+				</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -41,6 +43,8 @@
 		mounted () {
 			let len = this.infos.length;
 			let $lis = document.getElementsByTagName('li');
+
+			// 设置ul的宽度为li的几倍
 			this.$refs.stores.style.width = len + '00%';
 			for ( let $li of $lis ) {
 				$li.style.width = (100/len-2) + '00%'; 
@@ -52,30 +56,30 @@
 
 <style lang="scss" scoped>
 	
-	@import '../../style/mixin'; 
+	@import 'src/style/mixin'; 
 
 	.online-shop {
 		overflow: hidden;
 		background: $gray_bgc;
-		/* 标题栏 */
-		.mint-header {
-			
-		}
-		ul {
-			li {
-				position: relative;
-				box-sizing: border-box;
-				float: left;
-				height: 4.5rem;
-				margin: 0.2rem 1%;
-				border-radius: 20px;
-				background-repeat: no-repeat;
-				background-size: 100% 100%;
-				span {
-					position: absolute;
-					left: 0.2rem;
-					bottom: 0.2rem;
-					color: $tc;
+		.store-box {
+			position: relative;
+			width: 100%;
+			ul {
+				li {
+					position: relative;
+					box-sizing: border-box;
+					float: left;
+					height: 4.5rem;
+					margin: 0.2rem 1%;
+					border-radius: 20px;
+					background-repeat: no-repeat;
+					background-size: 100% 100%;
+					span {
+						position: absolute;
+						left: 0.2rem;
+						bottom: 0.2rem;
+						color: $tc;
+					}
 				}
 			}
 		}
