@@ -4,17 +4,21 @@
 
 // backgroundColor1 背景色 深灰色
 $gray_bgc: #343339;
+
 // backgroundColor2 背景色 黑色
 $black_bgc: #2A292F;
+
 // subjectColor 主题色 橙黄色
 $sc: #F4B04F;
+
 // title color 标题颜色	
 $tc: #FFF;
+
 // content color 文字内容颜色	
 $cc: #98979C;
+
 // operation color 操作文字的颜色
 $optc: #FFF;
-// $optc: #58CFFB;
 
 // 背景图片地址和大小
 @mixin bis($url) { 

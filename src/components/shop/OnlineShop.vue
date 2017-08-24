@@ -3,7 +3,7 @@
 		<header-title title="在线商城" />
 		<div class="store-box">
 			<ul class="clearfix" ref="stores">
-				<li v-for="item in infos" :style="item.style">
+				<li class="store" v-for="item in infos" :style="item.style" @click="loadShop">
 					<span>{{ item.name }}</span>
 				</li>
 			</ul>
@@ -40,14 +40,21 @@
 			'header-title': HeaderTitle
 		},
 
+		methods: {
+			loadShop () {
+
+			}
+		},
+
 		mounted () {
 			let len = this.infos.length;
-			let $lis = document.getElementsByTagName('li');
+			let $stores = this.$refs.stores;	// ul
+			let $lis = document.getElementsByClassName('store');	// li
 
 			// 设置ul的宽度为li的几倍
-			this.$refs.stores.style.width = len + '00%';
+			$stores.style.width = len + '00%';
 			for ( let $li of $lis ) {
-				$li.style.width = (100/len-2) + '00%'; 
+				$li.style.width = (100/len-2) + '%'; 
 			}
 		}
 	}
@@ -60,10 +67,10 @@
 
 	.online-shop {
 		overflow: hidden;
-		background: $gray_bgc;
 		.store-box {
 			position: relative;
 			width: 100%;
+			overflow: scroll;
 			ul {
 				li {
 					position: relative;

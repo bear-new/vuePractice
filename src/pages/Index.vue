@@ -41,11 +41,11 @@
 
 	import '@/assets/js/iconfont.js';
   	import { Tabbar, TabItem, TabContainer, TabContainerItem } from 'mint-ui';
-  	import Home from '../pages/home/Home.vue';
-	import Courses from '../pages/courses/Courses.vue';
-	import Pt from '../pages/pt/Pt.vue';
-	import Members from '../pages/members/Members.vue';
-	import AboutUs from '../pages/aboutUs/AboutUs.vue';
+  	import Home from '@/pages/home/Home.vue';
+	import Courses from '@/pages/courses/Courses.vue';
+	import Pt from '@/pages/pt/Pt.vue';
+	import Members from '@/pages/members/Members.vue';
+	import AboutUs from '@/pages/aboutUs/AboutUs.vue';
 	
 	export default {
 
@@ -108,6 +108,9 @@
 
     @import 'src/style/mixin';
 
+    .mint-tab-container {
+    	margin-bottom: 1.3rem;
+    }
 	.tab-bar {
 		@include font(.35rem, 1.5rem);
 	    background: $gray_bgc;

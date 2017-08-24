@@ -1,5 +1,5 @@
 <template>
-	<div class="introduction">
+	<div class="shop-bref">
 		<mt-header :title="shopName">
 		  	<mt-button slot="right" class="more">
 		  		更多店面
@@ -9,8 +9,8 @@
 	  		</mt-button>
 		</mt-header>
 		<div class="segmentation"></div>
-		<div class="bref">{{ bref }}</div>
-		<div class="unfold">展开</div>
+		<div class="bref" ref="bref">{{ bref }}</div>
+		<div class="unfold" @click="unfold">{{ foldText }}</div>
 	</div>
 </template>
 
@@ -20,13 +20,32 @@
 
 	export default {
 		
+		data () {
+			return {
+				isUnfold: false,
+				foldText: '展开'
+			}
+		},
+
 		props: ['shopName', 'bref'],
 
 		components: {
 			'mt-header': Header,
 			'mt-button': Button,
-		}
+		},
 
+		methods: {
+			// 展开（收起）
+			unfold () {
+				if ( !this.isUnfold ) {
+					this.$refs.bref.setAttribute('style', 'display: block');
+				} else {
+					this.$refs.bref.setAttribute('style', 'display: -webkit-box');
+				}
+				this.isUnfold = !this.isUnfold;
+				this.foldText = this.foldText == '展开' ? '收起' : '展开';
+			}
+		}
 	}
 
 </script>
@@ -36,10 +55,8 @@
 	@import 'src/style/mixin'; 
 
 	/* 顶部店面介绍 */
-	.introduction {
-		margin-bottom: 0.2rem;
+	.shop-bref {
 		padding-top: 0.2rem;
-		background: $gray_bgc;
 		.mint-header {
 			background: transparent;
 			@include sc(0.45rem, $tc);
@@ -62,7 +79,7 @@
 		    font-size: 0.4rem;
 		    text-align: left;
 		    letter-spacing: 0.02rem;
-		   	display: -webkit-box;
+		    display: -webkit-box;
 			-webkit-box-orient: vertical;
 			-webkit-line-clamp: 3;
 			overflow: hidden;

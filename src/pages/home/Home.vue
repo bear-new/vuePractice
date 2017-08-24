@@ -1,89 +1,96 @@
 <template>
 	<div class="home">
-		<!-- <swipe /> -->
+		<!-- 顶部轮播 -->
+		<swipe :images="images" />
 		<!-- 健身房介绍 -->
-		<div class="introduction">
-			<mt-header :title="shopName">
-			  	<mt-button slot="right" class="more">
-			  		更多店面
-			  		<svg class="icon" aria-hidden="true">
-					  	<use xlink:href="#icon-iconfontxiangxia1copy19"></use>
-					</svg>
-		  		</mt-button>
-			</mt-header>
-			<div class="segmentation"></div>
-			<div class="bref">{{ bref }}</div>
-		</div>
-		<!-- 在线商城 -->
-		<header-title title="在线商城"/>
+		<shop-bref :shopName="shopName" :bref="bref" />
+		<!-- 课程表 -->
+		<course-schedule :course="course"/>
+		<!-- 在线售卡 -->
+		<online-card :cards="cards" />
+		<!-- 联系我们 -->
+		<contact-us :company="company" />
+		<!-- 提供支持 -->
+		<technical-support />
 	</div>
 </template>
 
 <script>
 
-	import { Header, Button } from 'mint-ui'
 	import Swipe from '@/components/Swipe'
-	import HeaderTitle from '@/components/Header'
+	import ShopBref from '@/components/shop/ShopBref'
+	import CourseSchedule from '@/components/course/CourseSchedule'
+	import OnlineCard from '@/components/card/OnlineCard'
+	import ContactUs from '@/components/contact/ContactUs'
+	import TechnicalSupport from '@/components/support/TechnicalSupport'
 
 	export default {
 
 		data () {
 			return {
+				selected:'首页',
 				shopName: 'Push舞蹈室',
-				bref: '俱乐部相关介绍俱乐部相部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱相关介绍俱乐部相关介绍',
-
+				bref: '俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍俱乐部相关介绍',
+				images: [
+					require('@/assets/img/fitness1.jpg'),
+					require('@/assets/img/fitness2.jpg'),
+					require('@/assets/img/fitness3.jpg'),
+				],
+				course: [
+					{	
+						poster: require('@/assets/img/fitness4.jpg'),
+						name: '流瑜伽',
+						feature: '瑜伽、燃脂、力量',
+						time: '2017.07.29 11:00-12:00',
+						coach: '花花',
+						isAppoint: true,
+					},
+					{	
+						poster: require('@/assets/img/fitness4.jpg'),
+						name: '流瑜伽',
+						feature: '瑜伽、燃脂、力量',
+						time: '2017.07.29 11:00-12:00',
+						coach: '花花',
+						isAppoint: false
+					},
+				],
+				cards: [
+					require('@/assets/img/common_card_coach@2x.png'),
+					require('@/assets/img/common_card_number@2x.png'),
+					require('@/assets/img/common_card_time@2x.png'),
+					require('@/assets/img/common_card_value@2x.png')
+				],
+				company: {
+					name: 'Push舞蹈室',
+					address: '成都市天府软件园B6-2',
+					tel: '13258308888',
+					businessTime: '09:00-22:00'
+				}
 			}
 		},
 
 		components: {
-			'mt-header': Header,
-			'mt-button': Button,
 			'swipe': Swipe,
-			'header-title': HeaderTitle
+			'shop-bref': ShopBref,
+			'course-schedule': CourseSchedule,
+			'online-card': OnlineCard,
+			'contact-us': ContactUs,
+			'technical-support': TechnicalSupport
 		},
-
-		created () {
-			document.title = '健身助手';
-		},
+		
 	}
+
 </script>
 
 <style lang="scss" scoped>
 
-	@import '../../style/mixin';
+	@import 'src/style/mixin';
 
 	.home {
 		background: $black_bgc;
-		/* 顶部店面介绍 */
-		.introduction {
+		/* 各板块内容 */
+		.shop-bref,.course-schedule,.online-card,.contact-us {
 			margin-bottom: 0.2rem;
-			padding-top: 0.18rem;
-			background: $gray_bgc;
-			.mint-header {
-				background: transparent;
-				@include sc(0.45rem, $tc);
-				height: 1rem;
-				.more {
-					font-size: 0.35rem;
-					color: $cc;
-				}
-			}
-			.segmentation {
-				@include wh(1rem, 0.1rem);
-				background: $cc;
-				border-radius: 5px;
-				margin-left: 50%;
-				transform: translateX(-50%);
-			}
-			.bref {
-				color: $cc;
-				padding: 0.4rem;
-			    font-size: 0.4rem;
-			    text-align: left;
-			}
-		}
-		/* 标题栏 */
-		.mint-header {
 			background: $gray_bgc;
 		}
 	}
