@@ -6,7 +6,7 @@
 	    </mt-button>
 	  	<mt-button slot="right">
 	  		<svg class="icon" aria-hidden="true">
-			  	<use xlink:href="#icon-iconfontxiangxia1copy19"></use>
+			  	<use xlink:href="#icon-next"></use>
 			</svg>
 	  	</mt-button>
 	</mt-header>
@@ -53,6 +53,9 @@
 		}
 		.title {
 			color: $tc;
+		}
+		svg {
+			color: $cc;
 		}
 	}
 	

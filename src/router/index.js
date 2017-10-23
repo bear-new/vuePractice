@@ -1,18 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+/* 外层主页面 */
 import Index from '@/pages/Index'  //首页
-import Home from '@/pages/home/Home.vue'
+import Course from '@/pages/course/Course'  //课程
+import Pt from '@/pages/pt/Pt'  //私教  
+import MemberCard from '@/pages/memberCard/MemberCard'  //会员中心
 import AboutUs from '@/pages/aboutUs/AboutUs'  //关于我们
-import Appointment from '@/pages/courses/Appointment'  //立即预约
-import Calender from '@/pages/courses/Calender'  //日历弹窗
-import Cancel from '@/pages/courses/Cancel'   //取消预约
-import Courses from '@/pages/courses/Courses'  //课程
-import Details from '@/pages/courses/Details'  //课程详情
-import Members from '@/pages/members/Members'  //会员中心
-import Team from '@/pages/courses/Team'  //已成团
-import Vip from '@/pages/members/Vip'  //会员卡
-import Pt from '@/pages/pt/Pt'  //私教	
+/* 内层详情页面 */
+import CourseDetails from '@/pages/course/CourseDetails' // 课程详情
+/* 测试 */
+import Test from '@/pages/Test'
 
 Vue.use(Router)
 
@@ -24,10 +22,23 @@ export default new Router({
       name: 'Index',
       component: Index
     },
+    // 测试
+    {
+      path: '/test',
+      name: 'test',
+      component: Test
+    },
     // 课程
     {
-      path: '/courses/Courses',
-      component: Courses
+      path: '/course/Course',
+      component: Course,
+      children: [
+        {
+          name: 'course-details',
+          path: 'CourseDetails',
+          component: CourseDetails,
+        }
+      ]
     },
     // 私教
     {
@@ -36,43 +47,13 @@ export default new Router({
     },
     // 会员中心
     {
-      path: '/members/Members',
-      component: Members
+      path: '/memberCard/MemberCard',
+      component: MemberCard
     },
     // 关于我们
     {
       path: '/aboutUs/AboutUs',
       component: AboutUs
-    },
-    // 日历弹窗
-    {
-      path: '/courses/Calender',
-      component: Calender
-    },
-    // 立即预约
-    {
-      path: '/courses/Appointment',
-      component: Appointment
-    },
-    // 课程详情
-    {
-      path: '/courses/Appointment',
-      component: Appointment
-    },
-    // 取消预约
-    {
-      path: '/courses/Cancel',
-      component: Cancel
-    },
-    // 会员卡
-    {
-      path: '/members/Vip',
-      component: Vip
-    },
-    // 已成团
-    {
-      path: '/courses/Team',
-      component: Team
     },
   ]
 })

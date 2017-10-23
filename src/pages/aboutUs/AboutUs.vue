@@ -69,11 +69,11 @@
 	@import 'src/style/mixin';
 
 	.about-us {
-		background: $black_bgc;
+		background: $bottom_bgc;
 		/* 各板块内容 */
 		.shop-bref,.online-shop,.online-card,.contact-us {
 			margin-bottom: 0.2rem;
-			background: $gray_bgc;
+			background: $top_bgc;
 		}
 	}
 

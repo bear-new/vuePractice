@@ -7,7 +7,7 @@
           	</mt-tab-container-item>
 
           	<mt-tab-container-item id="课程">
-	        	<courses />
+	        	<course />
           	</mt-tab-container-item>
 
 	        <mt-tab-container-item id="私教">
@@ -15,14 +15,14 @@
 	        </mt-tab-container-item>
 
 	        <mt-tab-container-item id="会员中心">
-	        	<members />
+	        	<member-card />
 	        </mt-tab-container-item>
 
-	        <mt-tab-container-item id="联系我们">
+	        <mt-tab-container-item id="关于我们">
 	        	<about-us />
 	        </mt-tab-container-item>
 		</mt-tab-container>
-
+		
 		<!-- tab标签 -->
         <mt-tabbar fixed v-model="selected" class="tab-bar">
           	<template v-for="tab in tabs" >
@@ -42,9 +42,9 @@
 	import '@/assets/js/iconfont.js';
   	import { Tabbar, TabItem, TabContainer, TabContainerItem } from 'mint-ui';
   	import Home from '@/pages/home/Home.vue';
-	import Courses from '@/pages/courses/Courses.vue';
+	import Course from '@/pages/course/Course.vue';
 	import Pt from '@/pages/pt/Pt.vue';
-	import Members from '@/pages/members/Members.vue';
+	import MemberCard from '@/pages/memberCard/MemberCard.vue';
 	import AboutUs from '@/pages/aboutUs/AboutUs.vue';
 	
 	export default {
@@ -73,7 +73,7 @@
 		          selected: false
 		        },
 		        {
-		          name: '联系我们',
+		          name: '关于我们',
 		          svg: '#icon-about',
 		          selected: false
 		        },
@@ -91,9 +91,9 @@
 		    'mt-tab-container': TabContainer,
 		    'mt-tab-container-item': TabContainerItem,
 		    'home': Home,
-		    'courses': Courses,
+		    'course': Course,
 		    'pt': Pt,
-		    'members': Members,
+		    'member-card': MemberCard,
 		    'about-us': AboutUs
 	    },
 
@@ -113,8 +113,9 @@
     }
 	.tab-bar {
 		@include font(.35rem, 1.5rem);
-	    background: $gray_bgc;
+	    background: $top_bgc;
 	    color: $cc;
+	    box-shadow: -4px -2px 4px 1px $bc; 
 	    .mint-tab-item {
 	    	font-size: .24rem;
 		    svg {

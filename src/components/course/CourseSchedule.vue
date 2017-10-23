@@ -1,10 +1,10 @@
 <template>
 	<div class="course-schedule">
-		<header-title title="课程表" />
+		<header-title v-show="isShowHeader" title="课程表" />
 		<ul class="course-box">
-			<li v-for="item in course">
+			<li v-for="item in course" @click="load_course_details(item)">
 				<div class="course-poster">
-					<img :src="item.poster" onload="resizeimg(this,600,600);" />
+					<img :src="item.poster" />
 				</div>
 				<div class="course-content">
 					<div>{{ item.name }}</div>
@@ -33,11 +33,24 @@
 			}
 		},
 
-		props: ['course'],
+		props: ['isShowHeader', 'course'],
 		
 		components: {
 			'header-title': HeaderTitle
 		},
+
+		methods: {
+
+			// 预约
+			appoint () {
+				console.log('预约')
+			},
+
+			// 课程详情
+			load_course_details (course) {
+				this.$router.push({ path: 'CourseDetails' })
+			}
+		}
 
 	}
 
@@ -53,11 +66,16 @@
 			display:flex;
 			justify-content: center;
 			align-items: center;
+			padding: 0.2rem 0;
+			border-bottom: 1px $bc solid;
+			&:last-child {
+				border: none;
+			}
 			.course-poster {
 				flex: 1;
 				img {
-					width: 100%;
-					height: auto;
+					width: 1.5rem;
+					height: 1.5rem;
 					border-radius: 50%;
 				}
 			}
@@ -65,6 +83,9 @@
 				flex: 2;
 				text-align: left;
 				color: $tc;
+				div {
+					line-height: 0.6rem;
+				}
 				.feature, label {
 					color: $cc;
 				}

@@ -4,7 +4,7 @@
 		  	<mt-button slot="right" class="more">
 		  		更多店面
 		  		<svg class="icon" aria-hidden="true">
-				  	<use xlink:href="#icon-iconfontxiangxia1copy19"></use>
+				  	<use xlink:href="#icon-next"></use>
 				</svg>
 	  		</mt-button>
 		</mt-header>
@@ -85,7 +85,7 @@
 			overflow: hidden;
 		}
 		.unfold {
-			color: $optc;
+			color: $tc;
 			text-align: right;
 			padding: 0 0.4rem 0.2rem 0;
 		}
