@@ -1,19 +1,16 @@
 <template>
 	<div class="course">
-		<!-- 顶部轮播 -->
-		<swipe :images="images" />
 		<!-- 日历 -->
 		<calendar />
 		<!-- 课程表 -->
 		<course-schedule :course="course" />
 		<!-- 提供支持 -->
-		<technical-support />
+		<technical-support is-fill="{true}"/>
 	</div>
 </template>
 
 <script>
 
-	import Swipe from '@/components/Swipe'
 	import Calendar from '@/components/course/Calendar'
 	import CourseSchedule from '@/components/course/CourseSchedule'
 	import TechnicalSupport from '@/components/support/TechnicalSupport'
@@ -22,11 +19,6 @@
 
 		data () {
 			return {
-				images: [
-					require('@/assets/img/fitness1.jpg'),
-					require('@/assets/img/fitness2.jpg'),
-					require('@/assets/img/fitness3.jpg'),
-				],
 				course: [
 					{	
 						poster: require('@/assets/img/fitness4.jpg'),
@@ -49,14 +41,13 @@
 		},
 
 		components: {
-			'swipe': Swipe,
 			'calendar': Calendar,
 			'course-schedule': CourseSchedule,
 			'technical-support': TechnicalSupport
 		},
 
 		created () {
-			document.title = '健身助手';
+			document.title = '课程';
 		},
 	}
 </script>
@@ -67,6 +58,7 @@
 
 	.course {
 		background: $bottom_bgc;
+		height: 100%;	
 		.mint-swipe,.calendar,.course-schedule {
 			margin-bottom: 0.2rem;
 		}

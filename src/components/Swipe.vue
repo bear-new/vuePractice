@@ -1,6 +1,6 @@
 <!-- 轮播效果 -->
 <template>
-	<mt-swipe :auto="0">
+	<mt-swipe :auto="3000">
       	<mt-swipe-item v-for="img in images">
 	  		<img :src="img" />
 	  	</mt-swipe-item>

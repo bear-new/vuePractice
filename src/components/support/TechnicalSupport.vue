@@ -1,10 +1,20 @@
 <template>
-	<div class="technical-support">
-		<span class="line-left"></span>
+	<div class="technical-support" :class="{'fixedBottom' : isFill}">
+	       <span class="line-left"></span>
 		<span class="text">由<i>健身助手</i>提供技术支持</span>
 		<span class="line-right"></span>
 	</div>
 </template>
+
+<script type="text/javascript">
+    
+    export default {
+
+        props: ['isFill']
+
+    }
+
+</script>
 
 <style lang="scss" scoped>
 
@@ -42,4 +52,9 @@
         	}
         }
 	}
+    .fixedBottom {
+        position: fixed;
+        width: 100%;
+        bottom: 1.5rem;
+    }
 </style>

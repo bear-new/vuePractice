@@ -11,7 +11,7 @@
 		<!-- 课程表 -->
 		<course-schedule :course="course" />
 		<!-- 提供支持 -->
-		<technical-support />
+		<technical-support is-fill="{true}"/>
 	</div>
 </template>
 

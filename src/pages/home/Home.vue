@@ -85,8 +85,8 @@
 				],
 				company: {
 					name: 'Push舞蹈室',
-					address: '成都市天府软件园B6-2',
-					tel: '13258308888',
+					address: '上海市浦东新区',
+					tel: '13212345678',
 					businessTime: '09:00-22:00'
 				}
 			}

@@ -1,6 +1,5 @@
 <template>
 	<div class="trainer">
-		<header-title title="私人教练" />
 		<div>
 			<ul>
 				<li v-for="item in trainer">
@@ -29,8 +28,6 @@
 
 <script>
 	
-	import HeaderTitle from '@/components/Header'
-
 	export default {
 		
 		data () {
@@ -40,10 +37,6 @@
 		},
 
 		props: ['trainer'],
-
-		components: {
-			'header-title': HeaderTitle,
-		},
 
 		methods: {
 			gradeHtml (grade) {
@@ -72,54 +65,58 @@
 
 	/* 私人教练 */
 	.trainer {
-		li {
-			background: $top_bgc;
-			margin: 0.2rem;
-			border-radius: 10px;
-			display:-webkit-box;
-			display:flex;
-			justify-content: center;
-			align-items: center;
-			padding: 0.2rem 0;
-			border-bottom: 1px $bc solid;
-			.trainer-poster {
-				flex: 1;
-				img {
-					width: 1.5rem;
-					height: 1.5rem;
-					border-radius: 50%;
-				}
-			}
-			.trainer-content {
-				flex: 2;
-				text-align: left;
-				color: $cc;	
-				div {
-					line-height: 0.6rem;
-				}
-				.name {
-					color: $tc;
-				}
-				.feature, label {
-					span {
-						background: $bc;
-						margin-top: 0.1rem;
-						margin-right: 0.2rem;
+		ul {
+			padding: 0.1rem 0;
+			li {
+				background: $top_bgc;
+				margin: 0.2rem;
+				border-radius: 10px;
+				display:-webkit-box;
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				padding: 0.2rem 0;
+				border-bottom: 1px $bc solid;
+				.trainer-poster {
+					flex: 1;
+					img {
+						width: 1.5rem;
+						height: 1.5rem;
+						border-radius: 50%;
 					}
 				}
-			}
-			.trainer-operate {
-				flex: 1;
-				color: $sc;
-				.appoint {
-					border: 1px $sc solid;
-					background: transparent;
-					color: $sc;
-					border-radius: 5px;
-					padding: 0.1rem 0.2rem;
+				.trainer-content {
+					flex: 2;
+					text-align: left;
+					color: $cc;	
+					div {
+						line-height: 0.6rem;
+					}
+					.name {
+						color: $tc;
+					}
+					.feature, label {
+						span {
+							background: $bc;
+							margin-top: 0.1rem;
+							margin-right: 0.2rem;
+						}
+					}
 				}
-			}	
+				.trainer-operate {
+					flex: 1;
+					color: $sc;
+					.appoint {
+						border: 1px $sc solid;
+						background: transparent;
+						color: $sc;
+						border-radius: 5px;
+						padding: 0.1rem 0.2rem;
+					}
+				}	
+			}
 		}
+		
 	}
 
 </style>

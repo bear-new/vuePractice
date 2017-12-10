@@ -1,17 +1,14 @@
 <template>
 	<div class="pt">
-		<!-- 顶部轮播 -->
-		<swipe :images="images" />
 		<!-- 私人教练 -->
 		<trainer :trainer="trainer" />
 		<!-- 提供支持 -->
-		<technical-support />
+		<technical-support is-fill="{true}"/>
 	</div>
 </template>
 
 <script>
 
-	import Swipe from '@/components/Swipe'
 	import Trainer from '@/components/trainer/Trainer'
 	import TechnicalSupport from '@/components/support/TechnicalSupport'
 
@@ -19,11 +16,6 @@
 
 		data () {
 			return {
-				images: [
-					require('@/assets/img/fitness1.jpg'),
-					require('@/assets/img/fitness2.jpg'),
-					require('@/assets/img/fitness3.jpg'),
-				],
 				trainer: [
 					{
 						poster: require('@/assets/img/fitness4.jpg'),
@@ -51,7 +43,6 @@
 		},
 
 		components: {
-			'swipe': Swipe,
 			'trainer': Trainer,
 			'technical-support': TechnicalSupport
 		},

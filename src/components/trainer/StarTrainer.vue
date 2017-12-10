@@ -61,7 +61,7 @@
 			let $lis = document.getElementsByTagName('li');	// li
 
 			// 设置ul的宽度为li的几倍
-			$trainer.style.width = len*4.5 + 'rem';
+			$trainer.style.width = len*3.3+0.3 + 'rem';
 		}
 	}
 
@@ -79,11 +79,14 @@
 			width: 100%;
 			overflow: scroll;
 			.trainer {
-				padding: 0.1rem 0;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				overflow: scroll;
 				li {
 					float: left;
 					div {
-						width: 4.5rem;
+						width: 3.3rem;
 						color: $cc;
 						&.trainer-name {
 							
@@ -92,12 +95,12 @@
 							span {
 								background: $bc;
 								margin-top: 0.1rem;
-								margin-right: 0.2rem;
 							}
 						}
 						img {
-							width: 4rem;
-							height: 4rem;
+							width: 3rem;
+							height: 3rem;
+							border-radius: 0.1rem;
 						}
 					}
 				}

@@ -68,9 +68,6 @@
 			align-items: center;
 			padding: 0.2rem 0;
 			border-bottom: 1px $bc solid;
-			&:last-child {
-				border: none;
-			}
 			.course-poster {
 				flex: 1;
 				img {
