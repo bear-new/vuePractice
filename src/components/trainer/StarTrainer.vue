@@ -61,7 +61,7 @@
 			let $lis = document.getElementsByTagName('li');	// li
 
 			// 设置ul的宽度为li的几倍
-			$trainer.style.width = len*3.3+0.3 + 'rem';
+			$trainer.style.width = len*3.2 + 'rem';
 		}
 	}
 
@@ -80,13 +80,11 @@
 			overflow: scroll;
 			.trainer {
 				display: flex;
-				flex-wrap: wrap;
-				justify-content: space-between;
-				overflow: scroll;
+				padding: 0.1rem;
 				li {
 					float: left;
 					div {
-						width: 3.3rem;
+						width: 3.2rem;
 						color: $cc;
 						&.trainer-name {
 							

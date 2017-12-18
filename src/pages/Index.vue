@@ -17,10 +17,6 @@
 	        <mt-tab-container-item id="会员中心">
 	        	<member-card />
 	        </mt-tab-container-item>
-
-	        <mt-tab-container-item id="关于我们">
-	        	<about-us />
-	        </mt-tab-container-item>
 		</mt-tab-container>
 		
 		<!-- tab标签 -->
@@ -45,7 +41,6 @@
 	import Course from '@/pages/course/Course.vue';
 	import Pt from '@/pages/pt/Pt.vue';
 	import MemberCard from '@/pages/memberCard/MemberCard.vue';
-	import AboutUs from '@/pages/aboutUs/AboutUs.vue';
 	
 	export default {
 
@@ -72,11 +67,6 @@
 		          svg: '#icon-members',
 		          selected: false
 		        },
-		        {
-		          name: '关于我们',
-		          svg: '#icon-about',
-		          selected: false
-		        },
 	      	];
 
 	      	return {
@@ -94,7 +84,6 @@
 		    'course': Course,
 		    'pt': Pt,
 		    'member-card': MemberCard,
-		    'about-us': AboutUs
 	    },
 
 		created () {

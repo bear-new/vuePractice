@@ -76,6 +76,18 @@
 						grade: 3,
 						feature: ['国家一级运动员', '最高私教', '10年舞蹈生涯'],
 					},
+					{
+						poster: require('@/assets/img/fitness4.jpg'),
+						name: '顾泉锋',
+						grade: 3,
+						feature: ['国家一级运动员', '最高私教', '10年舞蹈生涯'],
+					},
+					{
+						poster: require('@/assets/img/fitness4.jpg'),
+						name: '顾泉锋',
+						grade: 3,
+						feature: ['国家一级运动员', '最高私教', '10年舞蹈生涯'],
+					},
 				],
 				cards: [
 					require('@/assets/img/common_card_coach@2x.png'),
